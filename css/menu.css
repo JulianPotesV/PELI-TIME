@@ -1,0 +1,34 @@
+#menu{
+    background-color: #FF0000;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    z-index: 1000;
+}
+
+#logo-menu{
+    padding-top: 90px;
+    align-items: center;
+}
+
+#volver{
+    padding-left: 80px;
+    display: flex;
+    align-items: center;
+}
+
+#usuario{
+    padding-right: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.material-symbols-outlined{
+    margin: 7px;
+    font-size: 32px;
+}

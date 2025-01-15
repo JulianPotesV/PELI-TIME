@@ -1,0 +1,87 @@
+
+#login-container {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 18px;
+    width: 562px;
+    height: 486px;
+    position: relative;
+    left: 250px;
+}
+
+#logo{
+    height: 206px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    bottom: 22%;
+}
+
+#boton{
+    background-color: red;
+    width: 428px;
+    height: 52px;
+    border: none;
+    border-radius: 26px;
+    font-family: 'Montserrat Medium', sans-serif;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#boton:hover{
+    background-color: #d60000;
+}
+
+#boton:active{
+    background-color: #ff3737;
+}
+
+#password{
+    font-size: 20px;
+}
+
+h1{
+    font-size: 35px;
+}
+
+input{
+    height: 52px;
+    width: 428px;
+    border-radius: 8px;
+    border: 2px solid #DDDDDD;
+    margin: 10px;
+    box-shadow: none;
+    outline: none;
+    padding-left: 12px;
+    font-family: 'Montserrat Regular', sans-serif;
+    font-size: 17px;
+}
+
+input::placeholder{
+    font-size: 14px;
+    color: #CBC8C8;
+    font-family: 'Montserrat', sans-serif;
+    text-align: 5px;
+}
+
+form{
+    position: relative;
+    bottom: 109px;
+}
+
+
+#login {
+    background-image: url('../assets/login/fondo_login.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
