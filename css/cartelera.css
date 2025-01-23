@@ -1,6 +1,67 @@
 #contenedor-textos-banner{
-    max-width: 1394px;
-    margin: 79px auto; 
-    padding: 60px; 
-    text-align: center; 
+    position: relative;
+    max-width: 80%;
+    justify-content: left;
+    display: block;
+    margin: 0 auto;
+    z-index: 4;
+    position: relative;
+    top: 50%;
+    bottom: 100px;
+    color: white;
+}
+
+#contenedor-carteleras{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#contenedor-peliculas{
+    display: flex;
+    justify-content: space-between;
+}
+
+#pelicula{
+    background-color:#e6e6e6;
+    height: 379px;
+    width: 664px;
+    margin-top: 40px;
+    border-radius: 10px;
+    display: flex;
+}
+
+#pelicula img{
+    margin: 20px;
+}
+
+#contenedor-texto-pelicula{
+    margin: 20px;
+}
+
+#contenedor-texto-pelicula h2{
+    color: red;
+    padding-top: 20px;
+    font-size: 25px;
+}
+
+#funciones{
+    padding-top: 120px;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+#contenedor-funciones{
+    display: flex;
+}
+
+.cuadro-funcion{
+    background-color: #190073;
+    margin: 5px;
+    border-radius: 6px;
+}
+
+.texto-funcion{
+    color: white;
+    font-weight:500;
+    padding: 10px;
 }
