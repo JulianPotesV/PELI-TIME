@@ -1,18 +1,27 @@
 #contenedor-textos-banner{
     position: relative;
-    max-width: 80%;
+    max-width: 72%;
     justify-content: left;
     display: block;
     margin: 0 auto;
     z-index: 4;
     position: relative;
     top: 50%;
-    bottom: 100px;
+    bottom: 150px;
     color: white;
 }
 
+#contenedor-textos-banner h1{
+    font-size: 28px;
+}
+
+#contenedor-textos-banner h3{
+    font-size: 25px;
+    font-weight: 400;
+}
+
 #contenedor-carteleras{
-    max-width: 80%;
+    max-width: 72%;
     margin: 0 auto;
 }
 

@@ -1,0 +1,27 @@
+#footer{
+    background-color: #190073;
+    height: 277px;
+    width: 100vw;
+    bottom: 0;
+}
+
+#contenedor-logo-textos{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+#contenedor-textos-footer{
+    display: flex;
+}
+
+#derechos{
+    text-align: center;
+}
+
+p {
+    color: white;
+    margin: 30px;
+}
