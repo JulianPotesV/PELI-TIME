@@ -4,16 +4,12 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-}
 body{
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
