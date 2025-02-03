@@ -1,3 +1,8 @@
+#banner{
+    background-image: url(../assets/cartelera/banner-tulua.png);
+    height: 377px;
+}
+
 #contenedor-textos-banner{
     position: relative;
     max-width: 72%;
@@ -23,11 +28,13 @@
 #contenedor-carteleras{
     max-width: 72%;
     margin: 0 auto;
+    margin-top: 60px;
 }
 
 #contenedor-peliculas{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #pelicula{
@@ -61,6 +68,10 @@
 
 #contenedor-funciones{
     display: flex;
+}
+
+#titulo-peliculas-cartelera{
+    font-weight: 400;
 }
 
 .cuadro-funcion{
