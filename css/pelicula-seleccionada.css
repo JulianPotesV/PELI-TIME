@@ -1,0 +1,86 @@
+#contenedor-pelicula-seleccionada{
+    max-width: 1396px;
+    margin: 0 auto;
+    margin-top: 170px;
+}
+
+#tarjeta-superior{
+    background-color: #e6e5e5;
+    display: flex;
+    height: 458px;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+}
+
+#tarjeta-inferior{
+    display: flex;
+    background-color: #d8d8d8;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 111px;
+    border-bottom-left-radius: 23px;
+    border-bottom-right-radius: 23px;
+}
+
+#contenedor-funciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #190073;
+    width: 585px;
+    margin: 0 auto;
+    height: 59px;
+    border-radius: 45px;
+}
+
+#contenedor-funciones p{
+    color: white;
+}
+
+#info-pelicula{
+    padding: 30px;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+
+h1{
+    font-size: 23pt;
+    color: #FF0000;
+}
+
+h2{
+    font-size: 15pt;
+    margin-top: 18px;
+}
+
+#tarjeta-superior img{
+    width: 265px;
+    height: 397.66px;
+}
+
+.cuadro-funcion{
+    display: flex;
+    background-color: #543AB4;
+    margin-left: 30px;
+    border-radius: 6px;
+    width: 105px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.material-symbols-outlined{
+    color: white;
+    font-size: 30px;
+}
+
+
