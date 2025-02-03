@@ -1,8 +1,9 @@
 #footer{
     background-color: #190073;
     height: 277px;
-    width: 100vw;
+    width: 100%;
     bottom: 0;
+    margin-top: 60px;
 }
 
 #contenedor-logo-textos{
@@ -21,7 +22,7 @@
     text-align: center;
 }
 
-p {
+#footer p {
     color: white;
     margin: 30px;
 }
