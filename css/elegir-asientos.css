@@ -14,10 +14,114 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 1396px;
+    height: 997px;
+    box-shadow: 3px 4px 22px -4px rgba(0,0,0,0.56);
+    border-radius: 9px;
+    margin-top: 70px;
 }
 
 #informacion-asientos{
     background-color: #E6E6E6;
+    width: 349px;
+    height: 997px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    border-radius: 9px;
+}
+
+#sala{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#circulo-verde, #escogida{
+    color: #00C717;
+}
+
+#circulo-rojo{
+    color: #FF0000;
+}
+
+.contenedor-precio-silla{
+    display: flex;
+}
+.precio-estandar{
+    background-color: #00C717;
+    width: 90px;
+    border-radius: 11px;
+    text-align: center;
+    font-weight: 500;
+    color: white;
+}
+
+.etiqueta-precio{
+    margin-left: 10px;
+}
+
+.botones-adicionar-quitar{
+    width: 56px;
+    height: 41px;
+    background-color: #190073;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    font-size:25px;
+}
+
+.id-silla-seleccionada{
+    display: flex;
+    background-color: #190073;
+    width: 71px;
+    height: 31px;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 2px
+}
+
+.titulos-sillas{
+    color: #190073;
+    font-weight: 500;
+}
+#sillas-seleccionadas{
+    display: flex;
+}
+
+#boton-numero{
+    display: flex;
+    width: 56px;
+    height: 41px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size:15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#cantidad-de-sillas{
+    display: flex;
+}
+
+#confirmar-silla{
+    display: flex;
+    background-color: #FF0000;
+    width: 238px;
+    height: 35px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 4px;
 }
 
 h1, h2{
@@ -26,4 +130,8 @@ h1, h2{
 
 h2{
     font-weight: 300;
+}
+
+hr{
+    width: 235px;
 }
