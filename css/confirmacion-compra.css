@@ -1,0 +1,151 @@
+#contenedor-confirmacion{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding-bottom: 60px
+}
+
+#banner-asientos{
+    background-image: url(../assets/seleccionar-asientos/banner-raven-sala.png);
+    width: 100%;
+    height: 279px;
+    margin-top: 70px;
+    text-align: center;
+    display: flex;               
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+h2{
+    font-weight: 300;
+}
+
+#informacion-pelicula{
+    display: flex;
+    background-color: #F0F0F0;
+    margin-top: 80px;
+    width: 764px;
+    height: 298px;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 23px;
+}
+
+#imagen-pelicula img{
+    width: 174.6px;
+    height: 262px;
+}
+
+#datos-usuario{
+    background-color:#F0F0F0;
+    width: 764px;
+    height: 298px;
+    margin-top: 24px;
+    border-radius: 23px;
+}
+
+#division-derecha{
+    margin-top: 80px;
+    width: 590px;
+    height: 620px;
+    margin-left: 24px;
+}
+
+#titulo-compra{
+    display: flex;
+    background-color: #190073;
+    height: 70px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+}
+
+#informacion-compra{
+    display: flex;
+    background-color: #F0F0F0;
+    height: 550px;
+    justify-content: center;
+    padding-top: 40px;
+    border-bottom-left-radius: 23px;
+    border-bottom-right-radius: 23px;
+}
+
+#boton-pagar{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #190073;
+    color: white;
+    position: relative;
+    width: 522px;
+    height: 50px;
+    bottom: 90px;
+    border-radius: 8px;
+}
+
+#total-pagar, #precio-final{
+    margin-top: 300px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#propiedades-pelicula{
+    margin-left: 25px
+}
+
+#propiedades-pelicula p{
+    font-weight: 700;
+    color: #190073;
+}
+
+#valores-pelicula{
+    margin-left: 10px
+}
+
+#valores-pelicula p{
+    font-weight: 700;
+    color: #000000;
+}
+
+#contenedor-datos-usuario{
+    display: flex;
+}
+
+#columna-precios{
+    margin-top: 24px;
+    margin-left: 330px;
+}
+
+output{
+    display: inline-block;
+    background-color: white;
+    padding-top: 9px;
+    padding-left: 10px;
+    width: 324px;
+    height: 40px;
+    margin-top: 14px;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+}
+
+hr{
+    position: relative;
+    width: 590px;
+    bottom: 250px;
+}
+
+#datos-usuario-derecha{
+    margin-left: 30px;
+}
+
+#contenedor-toda-informacion{
+    margin-left: 40px;
+    padding-top: 23px;
+}
