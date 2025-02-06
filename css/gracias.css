@@ -1,0 +1,24 @@
+#contenedor-gracias{
+    margin: 0 auto;
+    display: flex;
+    background-color: #F0F0F0;
+    width: 1080px;
+    height: 298px;
+    border-radius: 23px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    color:#FF0000;
+}
+
+h3{
+    font-weight: 400;
+}
+h2{
+    color: #190073;
+}
