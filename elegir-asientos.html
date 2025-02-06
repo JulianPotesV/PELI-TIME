@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>Elegir asientos</title>
 </head>
 <body>
@@ -19,44 +20,48 @@
     </div>
     <div id="contenedor-asientos">
         <div id="informacion-asientos">
-            <p>Selección de sillas:</p>
-            <p>Disponible</p>
-            <p>No disponible</p>
-            <p>Ocupada</p>
-            <p>Escogida</p>
+            <p class="titulos-sillas">Selección de sillas:</p><br>
+            <p><span id="circulo-verde" class="material-symbols-outlined">add_circle</span>Disponible</p>
+            <p><span id="circulo-rojo" class="material-symbols-outlined">cancel</span>No disponible</p>
+            <p><span class="material-symbols-outlined">close</span>Ocupada</p>
+            <p><span id="escogida" class="material-symbols-outlined">check</span>Escogida</p><br>
 
-            <p>Tipo de silla</p>
-            <div>icono asiento</div>
-            <div>
-                <div>Standard</div>
-                <div>$ 17.000</div>
+            <p class="titulos-sillas">Tipo de silla:</p><br>
+            <div class="contenedor-precio-silla">
+                <div><img src="assets/seleccionar-asientos/silla.png" alt="icono de la silla seleccionada"></div>
+                <div class="etiqueta-precio">
+                    <div>Standard</div>
+                    <div class="precio-estandar">$ 17.000</div> <br>
+                </div>
             </div>
 
-            <div>icono asiento</div>
-            <div>
-                <div>VIP</div>
-                <div>$ 34.000</div>
-            </div>
-
+            <div class="contenedor-precio-silla">
+                <div><img src="assets/seleccionar-asientos/silla.png" alt=""></div>
+                <div class="etiqueta-precio">
+                    <div>VIP</div>
+                    <div class="precio-estandar">$ 34.000</div>
+                </div>
+            </div><br>
+            <hr><br>
+            <p class="titulos-sillas">Cantidad de sillas:</p><br>
             <div id="cantidad-de-sillas">
-                <p>Cantidad de sillas</p>
-                <div>-</div>
-                <div>0</div>
-                <div>+</div>
-            </div>
-
+                <div class="botones-adicionar-quitar">-</div>
+                <div id="boton-numero">0</div>
+                <div class="botones-adicionar-quitar">+</div>
+            </div> <br>
+            <p class="titulos-sillas">Sillas seleccionadas:</p><br>
             <div id="sillas-seleccionadas">
-                <div>A1</div>
-                <div>A2</div>
-                <div>A3</div>
-            </div>
-            <div id="confirmar-silla">confirmar silla</div>
+                <div class="id-silla-seleccionada">A1</div>
+                <div class="id-silla-seleccionada">A2</div>
+                <div class="id-silla-seleccionada">A3</div>
+            </div> <br>
+            <div id="confirmar-silla">Confirmar silla</div>
 
 
 
         </div>
         <div id="sala">
-            <img src="assets/seleccionar-asientos/sala.png" alt="">
+            <img src="assets/seleccionar-asientos/sala.png" alt="esquema sala de cine">
         </div>
     </div>
 
