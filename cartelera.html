@@ -29,7 +29,7 @@
                         <img src="assets/cartelera/raven-el-cazador.png" alt="portada pelciula">
                         <div>
                             <div id="contenedor-texto-pelicula">
-                                <h2>Kraven El Cazador</h2>
+                                <h2 id="titulo-pelicula-1">  </h2>
                                 <h3>2D - Doblada</h3>
                                 <h4 id="funciones">Funciones:</h4>
                                 <div id="contenedor-funciones">
@@ -48,7 +48,7 @@
                         <img src="assets/cartelera/mohana.png" alt="portada pelciula">
                         <div>
                             <div id="contenedor-texto-pelicula">
-                                <h2>Mohana 2</h2>
+                                <h2 id="nombre-pelicula">Mohana 2</h2>
                                 <h3>2D - Doblada</h3>
                                 <h4 id="funciones">Funciones:</h4>
                                 <div id="contenedor-funciones">
@@ -67,7 +67,7 @@
                         <img src="assets/cartelera/mufasa.png" alt="portada pelciula">
                         <div>
                             <div id="contenedor-texto-pelicula">
-                                <h2>Mufasa</h2>
+                                <h2 id="nombre-pelicula">Mufasa</h2>
                                 <h3>2D - Doblada</h3>
                                 <h4 id="funciones">Funciones:</h4>
                                 <div id="contenedor-funciones">
@@ -107,6 +107,20 @@
     </section>
     <section id="cotenedor-footer"></section>
     <script src="js/main.js"></script>
+    <script type="module">
+        import { obtenerDatoPelicula } from "./tu-archivo.js"; // Importa la función
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const tituloPelicula = await obtenerDatoPelicula(1, "titulo"); // Obtiene el título de la película
+            if (tituloPelicula) {
+                // Actualiza el contenido de la etiqueta HTML
+                const elemento = document.getElementById("titulo-pelicula");
+                elemento.textContent = tituloPelicula;
+            } else {
+                console.error("No se pudo obtener el título de la película.");
+            }
+        });
+    </script>
     
 </body>
 </html>
