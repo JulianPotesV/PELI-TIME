@@ -4,7 +4,7 @@
 CREATE TABLE peliculas (
   idPeliculas SERIAL PRIMARY KEY,
   titulo VARCHAR(45),
-  descripcion VARCHAR(200),
+  descripcion VARCHAR(400),
   duracion INT,
   clasificacion VARCHAR(45),
   genero VARCHAR(45)

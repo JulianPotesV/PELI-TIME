@@ -5,5 +5,5 @@ export const pool = new pg.Pool({
     port: 5432,
     database: "pelitime_bd",
     user: "postgres",
-    password: "123456",
+    password: "America1927",
 });
