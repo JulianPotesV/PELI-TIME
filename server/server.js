@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware para parsear JSON en el cuerpo de las peticiones
 app.use(express.json());
 
-// Esto es crucial para que el navegador pueda acceder a tus archivos HTML, CSS, JS.
+// Esto es para que el navegador pueda acceder a los archivos HTML, CSS, JS.
 app.use(express.static(path.join(__dirname, '..')));
 
 // Endpoint para obtener especifo de una pelicula por su id
@@ -42,6 +42,23 @@ app.get('/api/usuarios/:id/:propiedad', async (req, res) => {
         res.status(404).json({ error: 'Usuario o propiedad no encontrada'});
     }
 });
+
+app.get('/api/peliculas/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    try {
+        const result = await pool.query('SELECT * FROM peliculas WHERE idpeliculas = $1', [id]);
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Película no encontrada' });
+        }
+
+        res.json(result.rows[0]);
+    } catch (error) {
+        console.error("Error al obtener la película:", error.message);
+        res.status(500).json({ error: 'Error en el servidor' });
+    }
+});
+
 
 async function iniciarServidor() {
     const dbConnected = await testConnection(); // Prueba la conexión a la DB

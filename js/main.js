@@ -48,4 +48,65 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(err => {
             console.error("Error al cargar footer:", err);
         });
+
+    
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const peliculaId = params.get('id');
+
+    if (peliculaId) {
+        fetch(`/api/peliculas/${peliculaId}`)
+            .then(res => {
+                if (!res.ok) throw new Error("No se pudo obtener la película");
+                return res.json();
+            })
+            .then(pelicula => {
+                renderizarPelicula(pelicula);
+            })
+            .catch(err => {
+                console.error("Error al cargar la película:", err);
+            });
+    }
+});
+
+function renderizarPelicula(peliculas) {
+    const infoPelicula = document.getElementById('info-pelicula');
+
+    infoPelicula.querySelector('h1').textContent = peliculas.titulo;
+    infoPelicula.querySelector('h2').textContent = peliculas.clasificacion || '2D';
+    infoPelicula.querySelector('p').innerHTML = `
+        Género: ${peliculas.genero} <br>
+        Duración: ${peliculas.duracion} minutos <br>
+        Clasificación: ${peliculas.edad} <br>
+        Director: ${peliculas.director} <br>
+        Actores: ${peliculas.actores}
+    `;
+
+    // Sinopsis
+    const sinopsis = infoPelicula.querySelectorAll('p')[1];
+    if (sinopsis) sinopsis.textContent = peliculas.descripcion;
+
+     // Imagen del póster
+    const poster = document.querySelector('#tarjeta-superior img');
+    if (poster) poster.src = peliculas.poster;
+
+    // trailer
+    const trailer = document.querySelector('#trailer iframe');
+    if (poster) trailer.src = peliculas.trailer;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const botones = document.querySelectorAll('.boton-cartelera');
+
+    botones.forEach(boton => {
+        boton.addEventListener('click', () => {
+            const tarjeta = boton.closest('.pelicula');
+            const id = tarjeta.dataset.id;
+
+            // Redirige a la página con el id como parámetro
+            window.location.href = `pelicula-seleccionada.html?id=${id}`;
+        });
+    });
 });
