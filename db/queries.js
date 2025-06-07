@@ -2,12 +2,27 @@ import { pool } from './conectionPostgresSQL.js';
 
 export const obtenerDatoPelicula = async (idpeliculas, propiedad) => {
     try {
-        const resultado = await pool.query("SELECT " + propiedad + " FROM peliculas WHERE idpeliculas = " + idpeliculas);
-        return resultado.rows[0][propiedad]
+        const resultado = await pool.query(
+            "SELECT " + propiedad + " FROM peliculas WHERE idpeliculas = " + idpeliculas
+        );
+        return resultado.rows[0][propiedad];
     } catch (error) {
         console.log(error);
         return null;
-    }   
+    }
+};
+
+export const obtenerUsuarioPorCredenciales = async (correo, contrasena) => {
+    try {
+        const resultado = await pool.query(
+            'SELECT * FROM usuarios WHERE correo = $1 AND contrasena = $2',
+            [correo, contrasena]
+        );
+        return resultado.rows[0] || null;
+    } catch (error) {
+        console.error("Error al obtener usuario:", error);
+        return null;
+    }
 };
 
 export const insertarPelicula = async (pelicula) => {
@@ -29,7 +44,7 @@ export const insertarPelicula = async (pelicula) => {
 
 export const obtenerDatoUsuario = async (idusuario, propiedad) => {
     try {
-        const columnasValidas = ['idusuario', 'nombre', 'correo', 'contrasena', 'correo', 'rol']; // Asegúrate que existan en tu tabla
+        const columnasValidas = ['idusuario', 'nombre', 'correo', 'contrasena', 'rol']; 
         if (!columnasValidas.includes(propiedad)) {
             throw new Error('Propiedad no válida');
         }
@@ -45,3 +60,5 @@ export const obtenerDatoUsuario = async (idusuario, propiedad) => {
         return null;
     }
 };
+
+
