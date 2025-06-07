@@ -101,6 +101,8 @@ function renderizarPelicula(peliculas) {
     if (poster) trailer.src = peliculas.trailer;
 }
 
+
+
 // Manejo de eventos para los botones de la cartelera
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -117,28 +119,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Manejo de eventos para la selección de sillas
+// Manejo de eventos para los botones de horario
 
 document.addEventListener('DOMContentLoaded', () => {
-    const sillas = document.querySelectorAll('.silla-disponible');
-    const contenedorSeleccion = document.getElementById('sillas-seleccionadas');
-    let sillasSeleccionadas = [];
+  const botones = document.querySelectorAll('.boton-horario');
+  const params = new URLSearchParams(window.location.search);
+  const peliculaId = params.get('id');
 
-    sillas.forEach(silla => {
+  botones.forEach(boton => {
+    boton.addEventListener('click', () => {
+      const hora = boton.dataset.hora;
+      if (peliculaId && hora) {
+        const url = `elegir-asientos.html?id=${peliculaId}&hora=${encodeURIComponent(hora)}`;
+        window.location.href = url;
+      } else {
+        alert("Faltan datos para continuar.");
+      }
+    });
+  });
+});
+
+// Manejo de eventos para la selección de sillas -1
+
+document.addEventListener('DOMContentLoaded', () => {
+    const confirmarBtn = document.getElementById('confirmar-silla');
+    const contenedorSillas = document.querySelectorAll('.silla-disponible');
+    const contenedorSeleccion = document.getElementById('sillas-seleccionadas');
+    const params = new URLSearchParams(window.location.search);
+
+    const peliculaId = params.get('id');
+    const horaSeleccionada = params.get('hora');
+    const sillasSeleccionadas = [];
+
+    contenedorSillas.forEach(silla => {
         silla.addEventListener('click', () => {
             const id = silla.dataset.id;
 
             if (silla.classList.contains('escogida')) {
-                // Quitar selección
                 silla.classList.remove('escogida');
-                sillasSeleccionadas = sillasSeleccionadas.filter(s => s !== id);
+                const index = sillasSeleccionadas.indexOf(id);
+                if (index !== -1) sillasSeleccionadas.splice(index, 1);
             } else {
-                // Agregar selección
                 silla.classList.add('escogida');
                 sillasSeleccionadas.push(id);
             }
 
-            // Actualizar el display
+            // Actualizar el display de sillas
             contenedorSeleccion.innerHTML = '';
             sillasSeleccionadas.forEach(sillaId => {
                 const span = document.createElement('span');
@@ -147,7 +173,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    confirmarBtn.addEventListener('click', () => {
+        if (!peliculaId) return alert("ID de película no definido.");
+        if (!horaSeleccionada) return alert("Hora no definida.");
+        if (sillasSeleccionadas.length === 0) return alert("Selecciona al menos una silla.");
+
+        const sillasQuery = encodeURIComponent(sillasSeleccionadas.join(','));
+        const horaQuery = encodeURIComponent(horaSeleccionada);
+        const url = `confirmacion-de-compra.html?id=${peliculaId}&hora=${horaQuery}&sillas=${sillasQuery}`;
+        window.location.href = url;
+    });
 });
+
+
+// Cargar información de la película al cargar la página
 
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
@@ -173,18 +213,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const botonComprar = document.getElementById('comprar-boletos');
-    if (botonComprar) {
-        const params = new URLSearchParams(window.location.search);
-        const peliculaId = params.get('id');
 
-        botonComprar.addEventListener('click', () => {
-            if (peliculaId) {
-                window.location.href = `elegir-asientos.html?id=${peliculaId}`;
-            } else {
-                console.warn('No hay ID de película en la URL');
-            }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const peliculaId = params.get('id');
+    const hora = params.get('hora');
+    const sillas = params.get('sillas')?.split(',') || [];
+
+    if (!peliculaId) return;
+
+    // Cargar datos de la película
+    fetch(`/api/peliculas/${peliculaId}`)
+        .then(res => res.json())
+        .then(peliculas => {
+            document.getElementById('titulo-pelicula').textContent = peliculas.titulo;
+            document.getElementById('poster-pelicula').src = peliculas.poster;
+            document.getElementById('hora-pelicula').textContent = hora;
+            document.getElementById('sala-pelicula').textContent = "3";
+            document.getElementById('cine-pelicula').textContent = peliculas.ubicacion || 'Peli Time Centro Comercial Tulua';
+            document.getElementById('sillas-seleccionadas').textContent = sillas.join(' - ');
+
+            const precio = 17000; // puedes calcular esto si hay tipos
+            const total = sillas.length * precio;
+            document.getElementById('precio-final').textContent = `$${total.toLocaleString('es-CO')}`;
+        })
+        .catch(err => {
+            console.error("Error cargando película:", err);
         });
-    }
+
+    // (Opcional) Lógica para cargar usuario
+    // Puedes usar un ID estático o desde localStorage si tienes login simulado
 });

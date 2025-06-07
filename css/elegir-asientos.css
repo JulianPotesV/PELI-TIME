@@ -110,7 +110,7 @@
     display: flex;
 }
 
-#confirmar-silla{
+.boton-confirmar{
     display: flex;
     background-color: #FF0000;
     width: 238px;
@@ -119,8 +119,22 @@
     align-items: center;
     justify-content: center;
     color: white;
-    border-radius: 4px;
+    border-radius: 7px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    font-weight: 600
 }
+
+button{
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #c90c0c;
+    color: white;
+}
+
 
 h1, h2{
     color: white;
