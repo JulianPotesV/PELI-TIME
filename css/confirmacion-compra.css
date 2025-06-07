@@ -74,7 +74,7 @@ h2{
     border-bottom-right-radius: 23px;
 }
 
-#boton-pagar{
+button{
     display: flex;
     text-align: center;
     align-items: center;
@@ -87,6 +87,12 @@ h2{
     height: 50px;
     bottom: 90px;
     border-radius: 8px;
+    border:none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #12053a;
 }
 
 #total-pagar, #precio-final{

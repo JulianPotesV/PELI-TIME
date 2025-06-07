@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
+// Cargar información de la compra al cargar la página de ciompra
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
@@ -248,6 +248,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// Cargar información del usuario al cargar la página de compra
+
 document.addEventListener('DOMContentLoaded', () => {
     const userId = 1116266669; // o traído desde login/localStorage
 
@@ -265,4 +267,33 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(err => {
             console.error("Error cargando datos del usuario:", err);
         });
+});
+
+// Cargar correo del usuario al cargar la página de gracias
+
+document.addEventListener('DOMContentLoaded', () => {
+    const userId = 1116266669; // reemplaza con el ID del usuario logueado o en sesión
+
+    fetch(`/api/usuarios/${userId}/correo`)
+        .then(res => {
+            if (!res.ok) throw new Error("No se pudo cargar el correo");
+            return res.json();
+        })
+        .then(data => {
+            document.getElementById('correo-usuario').textContent = data.correo;
+        })
+        .catch(error => {
+            console.error("Error al cargar el correo del usuario:", error);
+            document.getElementById('correo-usuario').textContent = 'No disponible';
+        });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const botonPagar = document.getElementById('boton-pagar');
+    if (botonPagar) {
+        botonPagar.addEventListener('click', () => {
+            // Aquí podrías guardar en localStorage si deseas usar datos en la siguiente vista
+            window.location.href = 'gracias.html';
+        });
+    }
 });
