@@ -66,7 +66,7 @@ h2{
     height: 397.66px;
 }
 
-.cuadro-funcion{
+.cuadro-funcion button{
     display: flex;
     background-color: #543AB4;
     margin-left: 30px;
@@ -75,7 +75,13 @@ h2{
     height: 36px;
     align-items: center;
     justify-content: center;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 
+button:hover{
+    background-color: #3f2a8c;
 }
 
 .material-symbols-outlined{

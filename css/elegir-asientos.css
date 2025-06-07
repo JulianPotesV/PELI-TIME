@@ -1,5 +1,5 @@
 #banner-asientos{
-    background-image: url(../assets/seleccionar-asientos/banner-raven-sala.png);
+    background-image: url();
     width: 100%;
     height: 279px;
     margin-top: 70px;
@@ -12,9 +12,7 @@
 #contenedor-asientos{
     margin: 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1396px;
+    width: 1200px;
     height: 997px;
     box-shadow: 3px 4px 22px -4px rgba(0,0,0,0.56);
     border-radius: 9px;
@@ -25,7 +23,7 @@
     background-color: #E6E6E6;
     width: 349px;
     height: 997px;
-    justify-content: center;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     padding-left: 30px;
@@ -134,4 +132,58 @@ h2{
 
 hr{
     width: 235px;
+}
+
+.silla-disponible{
+    font-weight: 600;
+    display: flex;                /* Necesario para centrar el contenido */
+    justify-content: center;     /* Centra horizontalmente */
+    align-items: center;
+    width: 67px;
+    height: 63px;
+    margin: 5px;
+    background-image: url(../assets/seleccionar-asientos/silla-disponible.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.escogida{
+    background-image: url(../assets/seleccionar-asientos/silla-seleccionada.png);
+}
+
+#asientos{
+    display: grid;
+    gap: 25px;
+    grid-template-rows: 50px 50px 50px 50px 50px 50PX;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
+}
+
+#pantalla{
+    margin-bottom: 80px;
+    background-color: rgb(185, 185, 185);
+    font-weight: 600;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+#contenedor-sala{
+   margin-left: 120px;
+   margin-top: 70px;
+   
+}
+
+#contenedor-sala{
+    display: fflex-column;
+    text-align: center;
+}
+
+#sillas-seleccionadas span{
+    background-color: #190073;
+    color: white;
+    padding: 5px;
+    padding-left: 13px;
+    padding-right: 13px;
+    margin-right: 7px;
+    border-radius: 12%;
 }
