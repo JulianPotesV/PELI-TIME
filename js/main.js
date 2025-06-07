@@ -232,17 +232,37 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('poster-pelicula').src = peliculas.poster;
             document.getElementById('hora-pelicula').textContent = hora;
             document.getElementById('sala-pelicula').textContent = "3";
-            document.getElementById('cine-pelicula').textContent = peliculas.ubicacion || 'Peli Time Centro Comercial Tulua';
+            document.getElementById('cine-pelicula').textContent = 'Peli Time Centro Comercial Tulua';
             document.getElementById('sillas-seleccionadas').textContent = sillas.join(' - ');
 
             const precio = 17000; // puedes calcular esto si hay tipos
             const total = sillas.length * precio;
+
+            document.querySelector('#informacion-compra p:nth-child(2)').textContent = `(${sillas.length} boletos)`;
             document.getElementById('precio-final').textContent = `$${total.toLocaleString('es-CO')}`;
+            document.getElementById('sub-total').textContent = `$${total.toLocaleString('es-CO')}`;
         })
         .catch(err => {
             console.error("Error cargando película:", err);
         });
 
-    // (Opcional) Lógica para cargar usuario
-    // Puedes usar un ID estático o desde localStorage si tienes login simulado
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const userId = 1116266669; // o traído desde login/localStorage
+
+    fetch(`/api/usuarios/${userId}`)
+        .then(res => {
+            if (!res.ok) throw new Error("Error al obtener usuario");
+            return res.json();
+        })
+        .then(usuarios => {
+            document.getElementById('nombre-usuario').textContent = `${usuarios.nombre} ${usuarios.apellido}`;
+            document.getElementById('cedula-usuario').textContent = userId;
+            document.getElementById('correo-usuario').textContent = usuarios.correo;
+            document.getElementById('telefono-usuario').textContent = usuarios.telefono;
+        })
+        .catch(err => {
+            console.error("Error cargando datos del usuario:", err);
+        });
 });
