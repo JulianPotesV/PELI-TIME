@@ -5,7 +5,7 @@ const pool = new Pool({
     port: 5432,
     database: "pelitime_bd",
     user: "postgres",
-    password: "America1927",
+    password: "123456",
 });
 
 async function testConnection() {
