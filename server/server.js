@@ -76,7 +76,11 @@ app.post('/login', async (req, res) => {
 
         if (usuario) {
             // Usuario válido, redirige a cartelera
+<<<<<<< HEAD
             return res.redirect('http://localhost:3000/sedes.html');
+=======
+            return res.redirect('http://localhost:3000/cartelera.html');
+>>>>>>> 58d84723cf7a43142e21799efe35e5c1e1eed7c9
         } else {
             // Credenciales no coinciden
             return res.status(401).json({ error: "Credenciales incorrectas" });

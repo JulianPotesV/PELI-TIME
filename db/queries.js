@@ -60,3 +60,5 @@ export const obtenerDatoUsuario = async (idusuario, propiedad) => {
         return null;
     }
 };
+
+

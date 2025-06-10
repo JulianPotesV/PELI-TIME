@@ -5,7 +5,11 @@ const pool = new Pool({
     port: 5432,
     database: "pelitime_prueba",
     user: "postgres",
+<<<<<<< HEAD
     password: "123",
+=======
+    password: "America1927",
+>>>>>>> 58d84723cf7a43142e21799efe35e5c1e1eed7c9
 });
 
 async function testConnection() {
