@@ -3,9 +3,9 @@ import { Pool } from 'pg';
 const pool = new Pool({
     host: "localhost",
     port: 5432,
-    database: "pelitime_bd",
+    database: "pelitime_prueba",
     user: "postgres",
-    password: "123456",
+    password: "123",
 });
 
 async function testConnection() {
